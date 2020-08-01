@@ -2190,7 +2190,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get("api/products/").then(function (response) {
-      return _this.products = response.data;
+      _this.products = response.data;
     });
   }
 });
@@ -3027,8 +3027,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var C_projects_bigStore_resources_components_Navbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./resources/components/Navbar */ "./resources/components/Navbar.vue");
-/* harmony import */ var C_projects_bigStore_resources_components_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./resources/components/Home */ "./resources/components/Home.vue");
+/* harmony import */ var _resources_components_Navbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/resources/components/Navbar */ "./resources/components/Navbar.vue");
+/* harmony import */ var _resources_components_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/resources/components/Home */ "./resources/components/Home.vue");
 //
 //
 //
@@ -3042,8 +3042,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Navbar: C_projects_bigStore_resources_components_Navbar__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Home: C_projects_bigStore_resources_components_Home__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Navbar: _resources_components_Navbar__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Home: _resources_components_Home__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   methods: {
     fn: function fn(e) {
@@ -7554,7 +7554,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "\n.small-text[data-v-28716060] {\n    font-size: 14px;\n}\n.pImg[data-v-28716060]{\n      max-width: 250px;\n}\n.product-box[data-v-28716060] {\n    border: 1px solid #cccccc;\n    padding: 10px 15px;\n}\n.hero-section[data-v-28716060] {\n    height: 30vh;\n    align-items: center;\n    margin-bottom: 20px;\n    margin-top: -20px;\n}\n.title[data-v-28716060] {\n    font-size: 60px;\n    /* color: #ffffff; */\n}\n", ""]);
+exports.push([module.i, "\n.small-text[data-v-28716060] {\r\n    font-size: 14px;\n}\n.pImg[data-v-28716060]{\r\n        max-width: 250px;\n}\n.product-box[data-v-28716060] {\r\n    border: 1px solid #cccccc;\r\n    padding: 10px 15px;\n}\n.hero-section[data-v-28716060] {\r\n    height: 30vh;\r\n    align-items: center;\r\n    margin-bottom: 20px;\r\n    margin-top: -20px;\n}\n.title[data-v-28716060] {\r\n    font-size: 60px;\r\n    /* color: #ffffff; */\n}\r\n", ""]);
 
 // exports
 
@@ -56534,8 +56534,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var C_projects_bigStore_resources_views_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./resources/views/App */ "./resources/views/App.vue");
-/* harmony import */ var C_projects_bigStore_resources_router_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./resources/router/router */ "./resources/router/router.js");
+/* harmony import */ var _resources_views_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/resources/views/App */ "./resources/views/App.vue");
+/* harmony import */ var _resources_router_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/resources/router/router */ "./resources/router/router.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
 
 
@@ -56543,12 +56543,12 @@ __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('App', C_projects_bigStore_resources_views_App__WEBPACK_IMPORTED_MODULE_3__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('App', _resources_views_App__WEBPACK_IMPORTED_MODULE_3__["default"]);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
-  router: C_projects_bigStore_resources_router_router__WEBPACK_IMPORTED_MODULE_4__["default"],
+  router: _resources_router_router__WEBPACK_IMPORTED_MODULE_4__["default"],
   components: {
-    App: C_projects_bigStore_resources_views_App__WEBPACK_IMPORTED_MODULE_3__["default"]
+    App: _resources_views_App__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   template: '<App/>'
 });
@@ -57729,14 +57729,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var C_projects_bigStore_resources_components_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./resources/components/Home */ "./resources/components/Home.vue");
-/* harmony import */ var C_projects_bigStore_resources_components_Login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./resources/components/Login */ "./resources/components/Login.vue");
-/* harmony import */ var C_projects_bigStore_resources_components_Register__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./resources/components/Register */ "./resources/components/Register.vue");
-/* harmony import */ var C_projects_bigStore_resources_components_SingleProduct__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./resources/components/SingleProduct */ "./resources/components/SingleProduct.vue");
-/* harmony import */ var C_projects_bigStore_resources_components_Checkout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./resources/components/Checkout */ "./resources/components/Checkout.vue");
-/* harmony import */ var C_projects_bigStore_resources_components_Confirmation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./resources/components/Confirmation */ "./resources/components/Confirmation.vue");
-/* harmony import */ var C_projects_bigStore_resources_components_UserBoard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./resources/components/UserBoard */ "./resources/components/UserBoard.vue");
-/* harmony import */ var C_projects_bigStore_resources_components_Admin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./resources/components/Admin */ "./resources/components/Admin.vue");
+/* harmony import */ var _resources_components_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/resources/components/Home */ "./resources/components/Home.vue");
+/* harmony import */ var _resources_components_Login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/resources/components/Login */ "./resources/components/Login.vue");
+/* harmony import */ var _resources_components_Register__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/resources/components/Register */ "./resources/components/Register.vue");
+/* harmony import */ var _resources_components_SingleProduct__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/resources/components/SingleProduct */ "./resources/components/SingleProduct.vue");
+/* harmony import */ var _resources_components_Checkout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/resources/components/Checkout */ "./resources/components/Checkout.vue");
+/* harmony import */ var _resources_components_Confirmation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/resources/components/Confirmation */ "./resources/components/Confirmation.vue");
+/* harmony import */ var _resources_components_UserBoard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/resources/components/UserBoard */ "./resources/components/UserBoard.vue");
+/* harmony import */ var _resources_components_Admin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/resources/components/Admin */ "./resources/components/Admin.vue");
 
 
 
@@ -57753,23 +57753,23 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
   routes: [{
     path: '/',
     name: 'home',
-    component: C_projects_bigStore_resources_components_Home__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: _resources_components_Home__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
     path: '/login',
     name: 'login',
-    component: C_projects_bigStore_resources_components_Login__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _resources_components_Login__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: '/register',
     name: 'register',
-    component: C_projects_bigStore_resources_components_Register__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _resources_components_Register__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
     path: '/products/:id',
     name: 'single-products',
-    component: C_projects_bigStore_resources_components_SingleProduct__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _resources_components_SingleProduct__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
     path: '/checkout',
     name: 'checkoute',
-    component: C_projects_bigStore_resources_components_Checkout__WEBPACK_IMPORTED_MODULE_6__["default"],
+    component: _resources_components_Checkout__WEBPACK_IMPORTED_MODULE_6__["default"],
     props: function props(route) {
       return {
         pid: route.query.pid
@@ -57778,11 +57778,11 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
   }, {
     path: '/confirmation',
     name: 'confirmation',
-    component: C_projects_bigStore_resources_components_Confirmation__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _resources_components_Confirmation__WEBPACK_IMPORTED_MODULE_7__["default"]
   }, {
     path: '/dashboard',
     name: 'userboard',
-    component: C_projects_bigStore_resources_components_UserBoard__WEBPACK_IMPORTED_MODULE_8__["default"],
+    component: _resources_components_UserBoard__WEBPACK_IMPORTED_MODULE_8__["default"],
     meta: {
       requiresAuth: true,
       is_user: true
@@ -57790,7 +57790,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
   }, {
     path: '/admin/:page',
     name: 'admin-pages',
-    component: C_projects_bigStore_resources_components_Admin__WEBPACK_IMPORTED_MODULE_9__["default"],
+    component: _resources_components_Admin__WEBPACK_IMPORTED_MODULE_9__["default"],
     meta: {
       requiresAuth: true,
       is_admin: true
@@ -57798,7 +57798,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
   }, {
     path: '/admin',
     name: 'admin',
-    component: C_projects_bigStore_resources_components_Admin__WEBPACK_IMPORTED_MODULE_9__["default"],
+    component: _resources_components_Admin__WEBPACK_IMPORTED_MODULE_9__["default"],
     meta: {
       requiresAuth: true,
       is_admin: true
@@ -57913,8 +57913,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\projects\bigStore\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! C:\projects\bigStore\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! G:\projects\bigStore\resources\assets\js\app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! G:\projects\bigStore\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
