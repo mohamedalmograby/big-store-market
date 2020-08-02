@@ -31,33 +31,31 @@
             }
         },
         mounted(){
-            axios.get("api/products/").then(response => {
-                this.products = response.data;
-                });      
+            axios.get("api/products/").then(response => this.products = response.data)      
         }
     }
 </script>
 
-<style scoped>
-.small-text {
-    font-size: 14px;
-}
-.pImg{
-        max-width: 250px;
+    <style scoped>
+    .small-text {
+        font-size: 14px;
+    }
+    .pImg{
+          max-width: 250px;
 
-}
-.product-box {
-    border: 1px solid #cccccc;
-    padding: 10px 15px;
-}
-.hero-section {
-    height: 30vh;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-top: -20px;
-}
-.title {
-    font-size: 60px;
-    /* color: #ffffff; */
-}
-</style>
+    }
+    .product-box {
+        border: 1px solid #cccccc;
+        padding: 10px 15px;
+    }
+    .hero-section {
+        height: 30vh;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-top: -20px;
+    }
+    .title {
+        font-size: 60px;
+        /* color: #ffffff; */
+    }
+    </style>

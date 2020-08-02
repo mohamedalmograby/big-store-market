@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/resources/components/Home' ; 
-import Login from '@/resources/components/Login';
-import Register from '@/resources/components/Register';
-import SingleProduct from '@/resources/components/SingleProduct'
-import Checkout from '@/resources/components/Checkout' 
-import Confirmation from '@/resources/components/Confirmation'
-import UserBoard from '@/resources/components/UserBoard'
-import Admin from '@/resources/components/Admin'
+import Home from 'C:/projects/bigStore/resources/components/Home' ; 
+import Login from 'C:/projects/bigStore/resources/components/Login';
+import Register from 'C:/projects/bigStore/resources/components/Register';
+import SingleProduct from 'C:/projects/bigStore/resources/components/SingleProduct'
+import Checkout from 'C:/projects/bigStore/resources/components/Checkout' 
+import Confirmation from 'C:/projects/bigStore/resources/components/Confirmation'
+import UserBoard from 'C:/projects/bigStore/resources/components/UserBoard'
+import Admin from 'C:/projects/bigStore/resources/components/Admin'
 
 Vue.use(VueRouter)
  
