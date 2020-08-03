@@ -24,15 +24,22 @@
 </template>
 
 <script>
+    
+    import https from 'https';
+    //const fs = require('fs');
     export default {
         data(){
             return {
-                products : []
+                products : [] 
             }
-        },
+        }, 
         mounted(){ 
-            
-            axios.get("api/products/" ).then(response => this.products = response.data)      
+            const httpsAgent = new https.Agent({
+                rejectUnauthorized: false, // (NOTE: this will disable client verification)
+                
+                passphrase: "YYY" 
+            });
+            axios.get("api/products/" , {  httpsAgent } ).then(response => this.products = response.data)      
         }
     }
 </script>
