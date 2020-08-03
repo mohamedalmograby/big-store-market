@@ -2189,12 +2189,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    var agent = new https.Agent({
-      ca: fs.readFileSync('ca.pem')
-    });
-    axios.get("api/products/", {
-      agent: agent
-    }).then(function (response) {
+    axios.get("api/products/").then(function (response) {
       return _this.products = response.data;
     });
   }

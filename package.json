@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "bootstrap": "^4.5.0",
+        "fs": "0.0.1-security",
         "https-agent": "^1.0.0",
         "jquery": "^3.5.1",
         "popper": "^1.0.1",
