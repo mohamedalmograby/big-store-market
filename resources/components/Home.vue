@@ -31,7 +31,10 @@
             }
         },
         mounted(){
-            axios.get("api/products/").then(response => this.products = response.data)      
+            var agent = new https.Agent({ 
+                ca: fs.readFileSync('ca.pem') 
+            });
+            axios.get("api/products/" ,  { agent: agent }).then(response => this.products = response.data)      
         }
     }
 </script>
