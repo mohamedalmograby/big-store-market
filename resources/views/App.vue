@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Navbar from 'C:/projects/bigStore/resources/components/Navbar' ; 
-import Home from 'C:/projects/bigStore/resources/components/Home' ;         
+import Navbar from '@/resources/components/Navbar' ; 
+import Home from '@/resources/components/Home' ;         
 export default {
     components :{
         Navbar , 
