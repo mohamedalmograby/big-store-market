@@ -2,19 +2,17 @@
     "private": true,
     "version": "1.0.0",
     "engines": {
-      "node": "12.x"
-    }, 
+        "node": "12.x"
+    },
     "scripts": {
-      
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-        ,
-        "start" : "npm run production" 
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "start": "npm run production"
     },
     "devDependencies": {
         "axios": "^0.19",
@@ -28,6 +26,7 @@
     },
     "dependencies": {
         "bootstrap": "^4.5.0",
+        "https-agent": "^1.0.0",
         "jquery": "^3.5.1",
         "popper": "^1.0.1",
         "popper.js": "^1.16.1",

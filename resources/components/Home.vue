@@ -30,11 +30,11 @@
                 products : []
             }
         },
-        mounted(){
+        mounted(){ 
             var agent = new https.Agent({ 
                 ca: fs.readFileSync('ca.pem') 
             });
-            axios.get("api/products/" ,  { agent: agent }).then(response => this.products = response.data)      
+            axios.get("api/products/" ,  { agent: agent } ).then(response => this.products = response.data)      
         }
     }
 </script>
