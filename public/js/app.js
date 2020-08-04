@@ -2182,7 +2182,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
- //const fs = require('fs');
+ //const fs = require('fs'); 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2196,12 +2196,15 @@ __webpack_require__.r(__webpack_exports__);
     var httpsAgent = new https__WEBPACK_IMPORTED_MODULE_0___default.a.Agent({
       rejectUnauthorized: false,
       // (NOTE: this will disable client verification)
+      //cert: fs.readFileSync("./usercert.pem"),
+      //key: fs.readFileSync("./key.pem"), 
       passphrase: "YYY"
     });
     axios.get("api/products/", {
       httpsAgent: httpsAgent
     }).then(function (response) {
-      return _this.products = response.data;
+      console.log(response);
+      _this.products = response.data;
     });
   }
 });
@@ -64569,7 +64572,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _resources_views_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/resources/views/App */ "./resources/views/App.vue");
 /* harmony import */ var _resources_router_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/resources/router/router */ "./resources/router/router.js");
-__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js"); //var fs = require("fs");
+
 
 
 

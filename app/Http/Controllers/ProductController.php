@@ -14,8 +14,15 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return response()->json(Product::all(),200);
+    {   
+        $st  ; 
+        try{
+            $st =  response()->json(Product::all(),200);
+        }
+        catch(\Exception $e){
+            return $e->getMessage() ; 
+        }
+        return $st ; 
 
     }
     public function store(Request $request)

@@ -1,4 +1,5 @@
 require('./bootstrap');
+//var fs = require("fs");
 
 import Vue from 'vue' ; 
 import bootstrap from 'bootstrap';

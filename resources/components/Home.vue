@@ -26,20 +26,25 @@
 <script>
     
     import https from 'https';
-    //const fs = require('fs');
+    //const fs = require('fs'); 
     export default {
         data(){
-            return {
+            return {    
                 products : [] 
             }
         }, 
         mounted(){ 
             const httpsAgent = new https.Agent({
                 rejectUnauthorized: false, // (NOTE: this will disable client verification)
-                
+                //cert: fs.readFileSync("./usercert.pem"),
+                //key: fs.readFileSync("./key.pem"), 
                 passphrase: "YYY" 
             });
-            axios.get("api/products/" , {  httpsAgent } ).then(response => this.products = response.data)      
+            axios.get("api/products/" , {  httpsAgent } ).then(response => {
+                console.log(response) ; 
+                this.products = response.data
+           
+            })      
         }
     }
 </script>
