@@ -41,8 +41,9 @@
                 passphrase: "YYY" 
             });
             axios.get("api/products/" , {  httpsAgent } ).then(response => {
-                console.log(response) ; 
-                this.products = response.data
+                console.log('-----------------') ;
+                console.log(response.data) ; 
+                this.products = response.data ; 
            
             })      
         }

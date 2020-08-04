@@ -2203,7 +2203,8 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("api/products/", {
       httpsAgent: httpsAgent
     }).then(function (response) {
-      console.log(response);
+      console.log('-----------------');
+      console.log(response.data);
       _this.products = response.data;
     });
   }
