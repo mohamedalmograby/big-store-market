@@ -7,6 +7,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
+                        <h5><span v-html="error"></span></h5> 
+
                         <div class="col-md-4 product-box" v-for="(product,index) in products" v-bind:key="index">
                             <router-link :to="{ path: '/products/'+product.id}">
                                 <img class="pImg" :src="product.image" :alt="product.name">
@@ -30,7 +32,8 @@
     export default {
         data(){
             return {    
-                products : [] 
+                products : []  , 
+                error : '' 
             }
         }, 
         mounted(){ 
@@ -44,7 +47,7 @@
                 console.log('-----------------') ;
                 console.log(response.data) ; 
                 this.products = response.data ; 
-           
+                this.error = response.data ; 
             })      
         }
     }

@@ -2182,12 +2182,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
  //const fs = require('fs'); 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      products: []
+      products: [],
+      error: ''
     };
   },
   mounted: function mounted() {
@@ -2206,6 +2209,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log('-----------------');
       console.log(response.data);
       _this.products = response.data;
+      _this.error = response.data;
     });
   }
 });
@@ -48046,47 +48050,55 @@ var render = function() {
           _c(
             "div",
             { staticClass: "row" },
-            _vm._l(_vm.products, function(product, index) {
-              return _c(
-                "div",
-                { key: index, staticClass: "col-md-4 product-box" },
-                [
-                  _c(
-                    "router-link",
-                    { attrs: { to: { path: "/products/" + product.id } } },
-                    [
-                      _c("img", {
-                        staticClass: "pImg",
-                        attrs: { src: product.image, alt: product.name }
-                      }),
-                      _vm._v(" "),
-                      _c("h5", [
-                        _c("span", {
-                          domProps: { innerHTML: _vm._s(product.name) }
+            [
+              _c("h5", [
+                _c("span", { domProps: { innerHTML: _vm._s(_vm.error) } })
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.products, function(product, index) {
+                return _c(
+                  "div",
+                  { key: index, staticClass: "col-md-4 product-box" },
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: { path: "/products/" + product.id } } },
+                      [
+                        _c("img", {
+                          staticClass: "pImg",
+                          attrs: { src: product.image, alt: product.name }
                         }),
                         _vm._v(" "),
+                        _c("h5", [
+                          _c("span", {
+                            domProps: { innerHTML: _vm._s(product.name) }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            {
+                              staticClass: "small-text text-muted float-right"
+                            },
+                            [_vm._v("$ " + _vm._s(product.price))]
+                          )
+                        ]),
+                        _vm._v(" "),
                         _c(
-                          "span",
-                          { staticClass: "small-text text-muted float-right" },
-                          [_vm._v("$ " + _vm._s(product.price))]
+                          "button",
+                          {
+                            staticClass:
+                              "col-md-4 btn btn-sm btn-primary float-right"
+                          },
+                          [_vm._v("Buy Now")]
                         )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "col-md-4 btn btn-sm btn-primary float-right"
-                        },
-                        [_vm._v("Buy Now")]
-                      )
-                    ]
-                  )
-                ],
-                1
-              )
-            }),
-            0
+                      ]
+                    )
+                  ],
+                  1
+                )
+              })
+            ],
+            2
           )
         ])
       ])
