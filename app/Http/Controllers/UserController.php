@@ -21,13 +21,17 @@ class UserController extends Controller
         $response = ['error' => 'Unauthorised'];
 
         
+        try{
 
-        if (Auth::attempt($request->only(['email', 'password']))) {
-            $status = 200;
-            $response = [
-                'user' => Auth::user(),
-                'token' => Auth::user()->createToken('bigStore')->accessToken,
-            ];
+            if (Auth::attempt($request->only(['email', 'password']))) {
+                $status = 200;
+                $response = [
+                    'user' => Auth::user(),
+                    'token' => Auth::user()->createToken('bigStore')->accessToken,
+                ];
+            }
+        }catch(\Exception $e){
+            return $e->getMessage() ; 
         }
         return response()->json($response, $status);
 

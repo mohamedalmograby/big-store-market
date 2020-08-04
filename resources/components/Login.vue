@@ -50,6 +50,8 @@ export default {
                 let password = this.password ; 
 
                 axios.post('api/login' , {email , password} ).then(response=>{
+                    console.log('------------') ; 
+                    console.log(response.data); 
                     let data = response.data ; 
                     if(data.error){
                         this.email = '' ; 
