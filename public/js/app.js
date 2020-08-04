@@ -2203,13 +2203,8 @@ __webpack_require__.r(__webpack_exports__);
       //key: fs.readFileSync("./key.pem"), 
       passphrase: "YYY"
     });
-    axios.get("api/products/", {
-      httpsAgent: httpsAgent
-    }).then(function (response) {
-      console.log('-----------------');
-      console.log(response.data);
+    axios.get("api/products/").then(function (response) {
       _this.products = response.data;
-      _this.error = response.data;
     });
   }
 });

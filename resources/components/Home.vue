@@ -43,11 +43,8 @@
                 //key: fs.readFileSync("./key.pem"), 
                 passphrase: "YYY" 
             });
-            axios.get("api/products/" , {  httpsAgent } ).then(response => {
-                console.log('-----------------') ;
-                console.log(response.data) ; 
+            axios.get("api/products/" ).then(response => {
                 this.products = response.data ; 
-                this.error = response.data ; 
             })      
         }
     }
