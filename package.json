@@ -15,8 +15,8 @@
         "start": "npm run production"
     },
     "devDependencies": {
-        "@vue/cli": "^4.4.6",
-        "@vue/cli-service-global": "^4.4.6",
+        "@vue/cli": "^6.14.6",
+        "@vue/cli-service-global": "^6.14.6",
         "axios": "^0.19",
         "core-js": "^2.6.11",
         "cross-env": "^7.0",
@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "bootstrap": "^4.5.0",
-        "file-system": "^2.2.2",
+        "file-system": "^2.2.2", 
         "fs": "0.0.1-security",
         "https": "^1.0.0",
         "https-agent": "^1.0.0",
