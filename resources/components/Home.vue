@@ -43,7 +43,7 @@
                 //key: fs.readFileSync("./key.pem"), 
                 passphrase: "YYY" 
             });
-            axios.get("https://big-store-market.herokuapp.com/api/products" ).then(response => {
+            axios.get("api/products/" ).then(response => {
                 this.products = response.data ; 
             })      
         }
