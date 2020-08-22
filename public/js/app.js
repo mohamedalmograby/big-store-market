@@ -2207,7 +2207,12 @@ __webpack_require__.r(__webpack_exports__);
       //key: fs.readFileSync("./key.pem"), 
       passphrase: "YYY"
     });
+<<<<<<< HEAD
     axios.get("api/products/", {
+=======
+    var domain = window.location.origin;
+    axios.get(domain + "/api/products/", {
+>>>>>>> parent of 8b362af... new
       httpsAgent: httpsAgent
     }).then(function (response) {
       console.log('-----------------');
