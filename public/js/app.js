@@ -2204,6 +2204,7 @@ __webpack_require__.r(__webpack_exports__);
       passphrase: "YYY"
     });
     var domain = window.location.origin;
+    console.log(domain);
     axios.get(domain + "/api/products/", {
       httpsAgent: httpsAgent
     }).then(function (response) {
