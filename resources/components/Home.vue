@@ -54,11 +54,15 @@
                 this.products = response.data ; 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             });
 =======
                 this.error = response.data ; 
             })      
 >>>>>>> parent of 4441de6... domain-trick
+=======
+            })      
+>>>>>>> parent of 8b362af... new
 =======
             })      
 >>>>>>> parent of 8b362af... new

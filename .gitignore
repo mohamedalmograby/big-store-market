@@ -3,7 +3,10 @@
 /public/storage
 /storage/*.key
 <<<<<<< HEAD
+<<<<<<< HEAD
 /storage/framework/*
+=======
+>>>>>>> parent of 8b362af... new
 =======
 >>>>>>> parent of 8b362af... new
 /vendor
