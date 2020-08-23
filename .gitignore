@@ -2,13 +2,7 @@
 /public/hot
 /public/storage
 /storage/*.key
-<<<<<<< HEAD
-<<<<<<< HEAD
-/storage/framework/*
-=======
->>>>>>> parent of 8b362af... new
-=======
->>>>>>> parent of 8b362af... new
+/storage/framework
 /vendor
 .env.backup
 .phpunit.result.cache

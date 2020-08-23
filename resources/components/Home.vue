@@ -43,29 +43,12 @@
                 //key: fs.readFileSync("./key.pem"), 
                 passphrase: "YYY" 
             });
-<<<<<<< HEAD
             var domain = window.location.origin ; 
+            console.log(domain) ; 
             axios.get( domain+ "/api/products/" , {  httpsAgent } ).then(response => {
-=======
-            axios.get("api/products/" , {  httpsAgent } ).then(response => {
->>>>>>> parent of 4441de6... domain-trick
                 console.log('-----------------') ;
-                console.log(response.data) ; 
                 this.products = response.data ; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             });
-=======
-                this.error = response.data ; 
-            })      
->>>>>>> parent of 4441de6... domain-trick
-=======
-            })      
->>>>>>> parent of 8b362af... new
-=======
-            })      
->>>>>>> parent of 8b362af... new
         }
     }
 </script>

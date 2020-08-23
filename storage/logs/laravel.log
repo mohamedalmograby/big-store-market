@@ -7747,32 +7747,3 @@ Did you mean one of these?
 #34 G:\\projects\\bigStore\\server.php(21): require_once('G:\\\\projects\\\\big...')
 #35 {main}
 "} 
-[2020-08-22 15:57:34] local.ERROR: Command "session:clear" is not defined.
-
-Did you mean one of these?
-    auth:clear-resets
-    cache:clear
-    config:clear
-    event:clear
-    optimize:clear
-    route:clear
-    session:table
-    view:clear {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"session:clear\" is not defined.
-
-Did you mean one of these?
-    auth:clear-resets
-    cache:clear
-    config:clear
-    event:clear
-    optimize:clear
-    route:clear
-    session:table
-    view:clear at G:\\projects\\bigStore\\vendor\\symfony\\console\\Application.php:644)
-[stacktrace]
-#0 G:\\projects\\bigStore\\vendor\\symfony\\console\\Application.php(228): Symfony\\Component\\Console\\Application->find('session:clear')
-#1 G:\\projects\\bigStore\\vendor\\symfony\\console\\Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#2 G:\\projects\\bigStore\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#3 G:\\projects\\bigStore\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#4 G:\\projects\\bigStore\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#5 {main}
-"} 
