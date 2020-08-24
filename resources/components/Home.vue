@@ -27,8 +27,8 @@
 
 <script>
     
+    const fs = require('fs'); 
     import https from 'https';
-    //const fs = require('fs'); 
     export default {
         data(){
             return {    
@@ -37,17 +37,19 @@
             }
         }, 
         mounted(){ 
+            //const fs = require('fs') ; 
+            console.log(fs) ;  
             const httpsAgent = new https.Agent({
                 rejectUnauthorized: false, // (NOTE: this will disable client verification)
                 //cert: fs.readFileSync("./usercert.pem"),
-                //key: fs.readFileSync("./key.pem"), 
+                //key: fs.readFileSync("./key.pem"),
                 passphrase: "YYY" 
             });
             var domain = window.location.origin ; 
             console.log(domain) ; 
-            axios.get( domain+ "/api/products/" , {  httpsAgent } ).then(response => {
+            axios.get( domain+ "/api/products" , {  httpsAgent } ).then(response => {
                 console.log('-----------------') ;
-                this.products = response.data ; 
+                this.products = response.data ;  
             });
         }
     }
