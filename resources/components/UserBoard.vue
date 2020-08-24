@@ -38,6 +38,8 @@
 </style>
 
 <script>
+import https from 'https';
+
 export default {
     data() {
         return {
@@ -50,9 +52,10 @@ export default {
 
         axios.defaults.headers.common['Content-Type'] = 'application/json'
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('bigStore.jwt')
+        const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
-        axios.get(`api/users/${this.user.id}/orders`)
-                .then(response => this.orders = response.data)
+        axios.get(`api/users/${this.user.id}/orders` , {httpsAgent})
+                .then(response => this.orders = response.data) ; 
     }
 }
 </script>

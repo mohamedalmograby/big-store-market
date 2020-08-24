@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import https from 'https';
+
 import Navbar from '@/resources/components/Navbar' ; 
 import Home from '@/resources/components/Home' ;         
 export default {

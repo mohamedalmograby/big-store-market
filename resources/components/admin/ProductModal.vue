@@ -80,6 +80,8 @@
 
 
 <script>
+import https from 'https';
+
 export default {
     props: ['product'],
     data() {
@@ -109,8 +111,10 @@ export default {
             if (this.attachment != null) {
                 var formData = new FormData();
                 formData.append("image", this.attachment)
-                let headers = {'Content-Type': 'multipart/form-data'}
-                axios.post("/api/upload-file", formData, {headers}).then(response => {
+                let headers = {'Content-Type': 'multipart/form-data'} ; 
+                const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+
+                axios.post("/api/upload-file", formData, {httpsAgent , headers}).then(response => {
                     this.product.image = response.data
                     this.$emit('close', this.product)
                 })

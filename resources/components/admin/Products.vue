@@ -28,6 +28,7 @@
 </template>
 <script>
 import Modal from './ProductModal'
+import https from 'https';
 
 export default {
     data() {
@@ -39,7 +40,9 @@ export default {
     },
     components: {Modal},
     beforeMount() {
-        axios.get('/api/products/').then(response => this.products = response.data)
+        const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+
+        axios.get('/api/products' , {httpsAgent}).then(response => this.products = response.data)
     },
     methods: {
         newProduct() {
@@ -59,8 +62,9 @@ export default {
             let units = product.units
             let price = product.price
             let description = product.description
+            const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
-            axios.put(`/api/products/${product.id}`, {name, units, price, description})
+            axios.put(`/api/products/${product.id}`, {httpsAgent ,  name, units, price, description})
                     .then(response => this.products[index] = product)
         },
         addProduct(product) {
@@ -71,8 +75,9 @@ export default {
             let price = product.price
             let description = product.description
             let image = product.image 
+            const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
-            axios.post("/api/products/", {name, units, price, description, image})
+            axios.post("/api/products", {httpsAgent , name, units, price, description, image})
                     .then(response => this.products.push(product))
         }
     }

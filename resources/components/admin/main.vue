@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import https from 'https';
+
 export default {
     data() {
         return {
@@ -24,9 +26,11 @@ export default {
         }
     },
     mounted() {
-        axios.get('/api/users/').then(response => this.users = response.data)
-        axios.get('/api/products/').then(response => this.products = response.data)
-        axios.get('/api/orders/').then(response => this.orders = response.data)
+        const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+
+        axios.get('/api/users' , {httpsAgent}).then(response => this.users = response.data)
+        axios.get('/api/products' , {httpsAgent}).then(response => this.products = response.data)
+        axios.get('/api/orders' , {httpsAgent}).then(response => this.orders = response.data)
     }
 }
 </script>

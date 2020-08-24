@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import https from 'https';
+
 export default {
     data() {
         return {
@@ -35,12 +37,16 @@ export default {
         }
     },
     beforeMount(){
-        axios.get('/api/orders/').then(response => this.orders = response.data)
+
+        const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+        axios.get('/api/orders' , {httpsAgent}).then(response => this.orders = response.data)
     },
     methods: {
         deliver(index) {
             let order = this.orders[index]
-            axios.patch(`/api/orders/${order.id}/deliver`).then(response => {
+
+            const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+            axios.patch(`/api/orders/${order.id}/deliver` , {httpsAgent}).then(response => {
                 this.orders[index].is_delivered = 1
                 this.$forceUpdate()
                 console.log(response) ; 

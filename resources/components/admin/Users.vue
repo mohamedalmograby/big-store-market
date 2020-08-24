@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import https from 'https';
+
 export default {
     data() {
         return {
@@ -31,7 +33,9 @@ export default {
         }
     },
     beforeMount() {
-        axios.get('/api/users/').then(response => this.users = response.data)
+        const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+
+        axios.get('/api/users' , {httpsAgent}).then(response => this.users = response.data)
     }
 }
 </script>

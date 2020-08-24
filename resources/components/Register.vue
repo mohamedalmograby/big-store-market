@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import https from 'https';
+
 export default {
     name : 'Register' , 
     data(){
@@ -68,8 +70,9 @@ export default {
             let email = this.email
             let password = this.password
             let c_password = this.password_confirmation
-            
-            axios.post('api/register' , {name , email , password , c_password}).then(response=>{
+            const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+
+            axios.post('api/register' , {httpsAgent , name , email , password , c_password}).then(response=>{
                 let data = response.data ; 
                 if(data.error){
                     this.name = "";

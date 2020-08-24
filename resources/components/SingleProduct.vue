@@ -17,6 +17,8 @@
     </div>
 </template>
 <script>
+import https from 'https';
+
     export default {
         data(){
             return {
@@ -25,7 +27,9 @@
         },
         beforeMount(){
             let url = `/api/products/${this.$route.params.id}`
-            axios.get(url).then(response => {
+            const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+
+            axios.get(url , {httpsAgent}).then(response => {
                     this.product = response.data;
                 }
             )      

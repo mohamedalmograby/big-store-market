@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import https from 'https';
+
 export default {
     props : ['pid'],
     data(){
@@ -50,7 +52,9 @@ export default {
         this.isLoggedIn = localStorage.getItem('bigStore.jwt') != null
     },
     beforeMount() {
-        axios.get(`/api/products/${this.pid}`).then(response => this.product = response.data)
+
+        const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+        axios.get(`/api/products/${this.pid}` , {httpsAgent} ).then(response => this.product = response.data)
 
         if (localStorage.getItem('bigStore.jwt') != null) {
             this.user = JSON.parse(localStorage.getItem('bigStore.user'))
@@ -72,7 +76,9 @@ export default {
             let product_id = this.product.id
             let quantity = this.quantity
 
-            axios.post('api/orders/', {address, quantity, product_id})
+            const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+
+            axios.post('api/orders', { httpsAgent , address, quantity, product_id})
                     .then(response => this.$router.push('/confirmation'))
         },
         checkUnits(e){

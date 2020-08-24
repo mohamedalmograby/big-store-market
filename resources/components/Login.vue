@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import https from 'https';
+
 export default {
     name : 'Login' , 
     data(){
@@ -48,8 +50,9 @@ export default {
             if(this.password.length>0){
                 let email = this.email ; 
                 let password = this.password ; 
+                const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
-                axios.post('api/login' , {email , password} ).then(response=>{
+                axios.post('api/login' , {httpsAgent ,  email , password} ).then(response=>{
                     console.log('------------') ; 
                     console.log(response.data); 
                     let data = response.data ; 
