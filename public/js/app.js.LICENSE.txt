@@ -5,14 +5,6 @@
   */
 
 /*!
- * BootstrapVue Icons, generated from Bootstrap Icons 1.0.0-alpha5
- *
- * @link https://icons.getbootstrap.com/
- * @license MIT
- * https://github.com/twbs/icons/blob/master/LICENSE.md
- */
-
-/*!
  * Sizzle CSS Selector Engine v2.3.5
  * https://sizzlejs.com/
  *
@@ -48,17 +40,6 @@
  * https://jquery.org/license
  *
  * Date: 2020-05-04T22:49Z
- */
-
-/*! 
-  * portal-vue © Thorsten Lünborg, 2019 
-  * 
-  * Version: 2.1.7
-  * 
-  * LICENCE: MIT 
-  * 
-  * https://github.com/linusborg/portal-vue
-  * 
  */
 
 /*! https://mths.be/punycode v1.4.1 by @mathias */

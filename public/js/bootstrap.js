@@ -37215,8 +37215,6 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fs = __webpack_require__(/*! fs */ "fs");
-
 __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
@@ -37253,17 +37251,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 module.exports = __webpack_require__(/*! G:\projects\bigStore\resources\assets\js\bootstrap.js */"./resources/assets/js/bootstrap.js");
 
-
-/***/ }),
-
-/***/ "fs":
-/*!*********************!*\
-  !*** external "fs" ***!
-  \*********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = fs;
 
 /***/ })
 

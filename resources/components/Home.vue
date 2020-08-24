@@ -38,11 +38,11 @@
         }, 
         mounted(){ 
             //const fs = require('fs') ; 
-            console.log(fs) ;  
+            
             const httpsAgent = new https.Agent({ rejectUnauthorized: false });
             var domain = window.location.origin ; 
             console.log(domain) ; 
-            axios.get( domain+ "/api/products" , {  httpsAgent } ).then(response => {
+            axios.get( domain+ "/api/products/" , {  httpsAgent } ).then(response => {
                 console.log('-----------------') ;
                 this.products = response.data ;  
             });
