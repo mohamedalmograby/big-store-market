@@ -4,11 +4,17 @@
             <h2 class="title">All your orders</h2>
         </div>
         <div class="container">
+            <div class="search-bar">
+                <b-nav-form>
+                    <b-form-input  v-model="searchKey" @keyup="updateOrders" size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
+                    <b-button size="sm" class="my-2 my-sm-0" >Search</b-button>
+                </b-nav-form>
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <br>
                     <div class="row">
-                        <div class="col-md-4 product-box" v-for="(order,index) in orders" v-bind:key="index">
+                        <div class="col-md-4 product-box" v-for="(order,index) in ordersToDisplay" v-bind:key="index">
                             <img class="pImg" :src="order.product.image" :alt="order.product.name">
                             <h5><span v-html="order.product.name"></span><br>
                                 <span class="small-text text-muted">$ {{order.product.price}}</span>
@@ -44,7 +50,9 @@ export default {
     data() {
         return {
             user : null,
-            orders : []
+            orders : [], 
+            ordersToDisplay : [] , 
+            searchKey : '' , 
         }
     },
     beforeMount() {
@@ -55,7 +63,21 @@ export default {
         const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
         axios.get(`api/users/${this.user.id}/orders` , {httpsAgent})
-                .then(response => this.orders = response.data) ; 
+                .then(response => {
+                    this.orders = response.data ; 
+                    this.ordersToDisplay = response.data ; 
+                }); 
+    } , 
+    methods : {
+        updateOrders : function (){
+            if(!this.searchKey){
+                this.ordersToDisplay = this.orders ; 
+            }
+            console.log (this.orders) ; 
+            this.ordersToDisplay = this.orders.filter((order)=>{
+                return order.product.name.toLowerCase().indexOf(this.searchKey.toLowerCase())>-1 ; 
+            });  
+    }
     }
 }
 </script>

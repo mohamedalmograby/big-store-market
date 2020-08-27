@@ -4,12 +4,18 @@
             <h2 class="title">Welcome to the bigStore</h2>
         </div>
         <div class="container">
+            <div class="search-bar">
+                <b-nav-form>
+                    <b-form-input  v-model="searchKey" @keyup="updateProducts" size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
+                    <b-button size="sm" class="my-2 my-sm-0" >Search</b-button>
+                </b-nav-form>
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
                         <h5><span v-html="error"></span></h5> 
 
-                        <div class="col-md-4 product-box" v-for="(product,index) in products" v-bind:key="index">
+                        <div class="col-md-4 product-box" v-for="(product,index) in productsToDisplay" v-bind:key="index">
                             <router-link :to="{ path: '/products/'+product.id}">
                                 <img class="pImg" :src="product.image" :alt="product.name">
                                 <h5><span v-html="product.name"></span>
@@ -33,6 +39,8 @@
         data(){
             return {    
                 products : []  , 
+                productsToDisplay : [] , 
+                searchKey : "" , 
                 error : '' 
             }
         }, 
@@ -45,8 +53,21 @@
             axios.get( domain+ "/api/products" , {  httpsAgent } ).then(response => {
                 console.log('-----------------') ;
                 this.products = response.data ;  
+                this.productsToDisplay = response.data ; 
             });
-        }
+        },
+        methods :{
+            updateProducts(){
+                if(!this.searchKey){
+                    this.productsToDisplay = this.products ; 
+                }
+                this.productsToDisplay = this.products.filter((product)=>{
+                    return product.name.toLowerCase().indexOf(this.searchKey.toLowerCase())>-1 ; 
+                });  
+                
+            }
+
+        } 
     }
 </script>
 
@@ -57,6 +78,10 @@
     .pImg{
           max-width: 250px;
 
+    }
+    .search-bar{
+        margin-left: -20px ;
+        margin-bottom: 30px;
     }
     .product-box {
         border: 1px solid #cccccc;
