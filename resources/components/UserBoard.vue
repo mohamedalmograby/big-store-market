@@ -14,7 +14,7 @@
                 <div class="col-md-12">
                     <br>
                     <div class="row">
-                        <div class="col-md-4 product-box" v-for="(order,index) in ordersToDisplay" v-bind:key="index">
+                        <div class="col-md-12 product-box" v-for="(order,index) in ordersToDisplay" v-bind:key="index">
                             <img class="pImg" :src="order.product.image" :alt="order.product.name">
                             <h5><span v-html="order.product.name"></span><br>
                                 <span class="small-text text-muted">$ {{order.product.price}}</span>
@@ -39,7 +39,7 @@
 .hero-section { background: #ababab; height: 20vh; align-items: center; margin-bottom: 20px; margin-top: -20px; }
 .title { font-size: 60px; color: #ffffff; }
  .pImg{
-          max-width: 250px;
+          max-width: 25px;
     }
 </style>
 
