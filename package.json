@@ -29,6 +29,7 @@
     },
     "dependencies": {
         "bootstrap": "^4.5.0",
+        "bootstrap-vue": "^2.16.0",
         "file-system": "^2.2.2",
         "fs": "0.0.1-security",
         "https": "^1.0.0",
@@ -37,6 +38,8 @@
         "popper": "^1.0.1",
         "popper.js": "^1.16.1",
         "vue": "^2.6.11",
-        "vue-router": "^3.3.4"
+        "vue-clickaway": "^2.2.2",
+        "vue-router": "^3.3.4",
+        "vue2-google-maps": "^0.10.7"
     }
 }

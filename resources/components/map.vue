@@ -1,28 +1,9 @@
 <template>
-    <div   class="modal-mask">
+    <div class="modal-mask">
         <div class="modal-wrapper">
-            <div v-on-clickaway="clickedAway"  class="modal-container">
-                <div class="modal-header">
-                    <slot name="header" v-html="data.name"></slot>
-                </div>
-                <div  class="modal-body">
-                    <slot name="body">
-                        Name: <input type="text" v-model="data.name">
-                        Units: <input type="text" v-model="data.units">
-                        Price: <input type="text" v-model="data.price">
-                        <textarea v-model="data.description" placeholder="description"></textarea>
-                        <span >
-                            <img :src="data.image" v-show="data.image != null">
-                            <input type="file" id="file" @change="attachFile">
-                        </span>
-                    </slot>
-                </div>
-                <div class="modal-footer">
-                    <slot name="footer">
-                        <button class="modal-default-button" @click="uploadFile">
-                            Finish
-                        </button>
-                    </slot>
+            <div  v-on-clickaway="clickedAway" class="modal-container">
+                <div class="google-map" id="map">
+
                 </div>
             </div>
         </div>
@@ -30,13 +11,13 @@
 </template>
 
 <style scoped>
-.modal-mask {
-    position: fixed;
+.modal-mask { 
+    position: fixed; 
     z-index: 9998;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
     background-color: rgba(0, 0, 0, .5);
     display: table;
     transition: opacity .3s ease;
@@ -46,9 +27,10 @@
     vertical-align: middle;
 }
 .modal-container {
-    width: 300px;
+    width: 600px;
+    height: 400px ; 
     margin: 0px auto;
-    padding: 20px 30px;
+    padding: 2px 3px;
     background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
@@ -76,12 +58,18 @@
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
+.google-map{
+    width : 100% ;
+    height :100% ; 
+    background :#fff; 
+}
 </style>
 
 
 <script>
 import https from 'https';
 import { mixin as clickaway } from 'vue-clickaway';
+//import * as VueGoogleMaps from 'vue2-google-maps'
 
 export default {
     mixins: [ clickaway ],
@@ -106,9 +94,36 @@ export default {
             }
         }
     },
+    mounted(){
+        this.renderMap() ; 
+    } ,
     methods: {
+        renderMap(){
+            const map = new google.maps.Map(document.getElementById('map') , {
+                center:{lat :0 ,lng:0 },
+                zoom:3 , 
+                maxZoom :15 , 
+                minZoom : 3 ,
+                streetViewControl : false 
+            }) ; 
+            var marker = new google.maps.Marker({
+                position: {lat :0 ,lng:0 },
+                map: map,
+                draggable: true,
+                title: 'Hello World!'
+            });
+            marker.addListener('click', this.toggleBounce(marker));
+
+        },
+        toggleBounce(marker) {
+            if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        },
         clickedAway(event){
-            this.$emit('clickedAwayForm') ; 
+            this.$emit('clickedAway') ; 
         } , 
         attachFile(event) {
             this.attachment = event.target.files[0];

@@ -13,6 +13,7 @@
         <div id="app">
             
         </div>
+        <script src="https://maps.googleapis.com/maps/api/js"async defer></script>
         <script src="{{ mix('js/bootstrap.js') }}"></script>
         <script src="{{ mix('js/app.js') }}"></script>
     </body>

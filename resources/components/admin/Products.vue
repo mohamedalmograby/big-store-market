@@ -20,8 +20,8 @@
                 </tr>
             </tbody>
         </table>
-        <modal @close="endEditing" :product="editingItem" v-show="editingItem != null"></modal>
-        <modal @close="addProduct"  :product="addingProduct" v-show="addingProduct != null"></modal>
+        <modal  @clickedAwayForm="closeEditForm" @close="endEditing" :product="editingItem" v-show="editingItem != null"></modal>
+        <modal  @clickedAwayForm="closeAddForm" @close="addProduct"  :product="addingProduct" v-show="addingProduct != null"></modal>
         <br>
         <button class="btn btn-primary" @click="newProduct">Add New Product</button>
     </div>
@@ -35,7 +35,8 @@ export default {
         return {
             products: [],
             editingItem: null,
-            addingProduct: null
+            addingProduct: null , 
+            wait : null 
         }
     },
     components: {Modal},
@@ -53,6 +54,10 @@ export default {
                 image: null,
                 description: null,
             }
+            this.wait = 1  ; 
+            setTimeout(()=>{
+                this.wait = null ; 
+            } , 100) ;
         },
         endEditing(product) {
             this.editingItem = null
@@ -79,6 +84,15 @@ export default {
 
             axios.post("/api/products", {httpsAgent , name, units, price, description, image})
                     .then(response => this.products.push(product))
+        } , 
+        closeAddForm(){
+            if(this.wait)return ; 
+            this.addingProduct= null ; 
+        }
+        ,
+        closeEditForm(){
+            if(this.wait)return ; 
+            this.editingItem = null ; 
         }
     }
 }

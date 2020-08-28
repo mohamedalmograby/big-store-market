@@ -19,33 +19,43 @@
                         <button class="col-md-4 btn btn-primary float-left" @click="login">Login</button>
                         <button class="col-md-4 btn btn-danger float-right" @click="register">Create an account</button>
                     </div>
+                    <Map @clickedAway="closeMap" v-show="mapLocation != null"></Map>
                     <div v-if="isLoggedIn">
                         <div class="row">
+
                             <label for="address" class="col-md-3 col-form-label">Delivery Address</label>
-                            <div class="col-md-9">
+                            <div class="col-md-6">
                                 <input id="address" type="text" class="form-control" v-model="address" required>
                             </div>
+                            <button class="btn btn-sm btn-primary col-md-3 " v-if="isLoggedIn" @click="renderMap">GPS</button>
+
                         </div>
                         <br>
-                        <button class="col-md-4 btn btn-sm btn-success float-right" v-if="isLoggedIn" @click="placeOrder">Continue</button>
+        
+                        <button class="col-md-4 btn btn-sm btn-success float-right" v-if="isLoggedIn" @click.stop.prevent="placeOrder">Continue</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
 </template>
 
 <script>
 import https from 'https';
+import Map from './map' ;
+
 
 export default {
     props : ['pid'],
+    components: {Map} ,
     data(){
         return {
+            wait : null , 
             address : "",
             quantity : 1,
             isLoggedIn : null,
-            product : []
+            product : [] , 
+            mapLocation : null 
         }
     },
     mounted() {
@@ -63,6 +73,20 @@ export default {
         }
     },
     methods : {
+        renderMap(){
+
+            this.mapLocation = 1 ; 
+            this.wait = 1  ; 
+            setTimeout(()=>{
+                this.wait = null ; 
+            } , 100) ;
+        } , 
+        closeMap(){
+            if(this.wait)return ; 
+            this.mapLocation = null ; 
+        }
+        
+        ,
         login() {
             this.$router.push({name: 'login', params: {nextUrl: this.$route.fullPath}})
         },

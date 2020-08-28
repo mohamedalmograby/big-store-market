@@ -21,7 +21,7 @@
                             </h5>
                             <hr>
                             <span class="small-text text-muted">Quantity: {{order.quantity}}
-                                <span class="float-right">{{order.is_delivered == 1? "shipped!" : "not shipped"}}</span>
+                                <span v-bind:class="{'text-success' : order.is_delivered==1 , 'text-warning' : order.is_delivered==0, 'float-right' : true }">{{order.is_delivered == 1? "shipped!" : "not shipped"}}</span>
                             </span>
                             <br><br>
                             <p><strong>Delivery address:</strong> <br>{{order.address}}</p>
