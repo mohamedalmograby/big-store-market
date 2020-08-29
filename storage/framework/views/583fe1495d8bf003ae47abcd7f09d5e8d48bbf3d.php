@@ -13,7 +13,8 @@
         <div id="app">
             
         </div>
-        <script src="https://maps.googleapis.com/maps/api/js"async defer></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5oHBk153Cb-jzEsSrrn5j2zaeNvK5j64"
+        type="text/javascript"></script>
         <script src="<?php echo e(mix('js/bootstrap.js')); ?>"></script>
         <script src="<?php echo e(mix('js/app.js')); ?>"></script>
     </body>

@@ -2,6 +2,7 @@
     <div class="modal-mask">
         <div class="modal-wrapper">
             <div  v-on-clickaway="clickedAway" class="modal-container">
+                <h5 class="header" >drag the marker to address location</h5>
                 <div class="google-map" id="map">
 
                 </div>
@@ -37,30 +38,15 @@
     transition: all .3s ease;
     font-family: Helvetica, Arial, sans-serif;
 }
-.modal-header h3 {
+.header{
     margin-top: 0;
     color: #42b983;
-}
-.modal-body {
-    margin: 20px 0;
-}
-.modal-default-button {
-    float: right;
-}
-.modal-enter {
-    opacity: 0;
-}
-.modal-leave-active {
-    opacity: 0;
-}
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    text-align: center;
+
 }
 .google-map{
     width : 100% ;
-    height :100% ; 
+    height :88% ; 
     background :#fff; 
 }
 </style>
@@ -98,6 +84,7 @@ export default {
         this.renderMap() ; 
     } ,
     methods: {
+        
         renderMap(){
             const map = new google.maps.Map(document.getElementById('map') , {
                 center:{lat :0 ,lng:0 },
@@ -107,21 +94,31 @@ export default {
                 streetViewControl : false 
             }) ; 
             var marker = new google.maps.Marker({
-                position: {lat :0 ,lng:0 },
+                position: map.getCenter(),
                 map: map,
                 draggable: true,
-                title: 'Hello World!'
+                title: 'cuurent location'
             });
-            marker.addListener('click', this.toggleBounce(marker));
+            var geocoder = new google.maps.Geocoder();
+
+            map.addListener('center_changed', function() {
+                marker.setPosition(map.getCenter()) ;
+            });
+            marker.addListener('position_changed', ()=>{
+                var address = this.getAddress(marker.getPosition() , map , geocoder) ; 
+                this.$emit('marker_position_changed' , address) ; 
+            });
+           
 
         },
-        toggleBounce(marker) {
-            if (marker.getAnimation() !== null) {
-                marker.setAnimation(null);
-            } else {
-                marker.setAnimation(google.maps.Animation.BOUNCE);
-            }
-        },
+        getAddress(latlng , map , geocoder){
+            // this function should return the address:string but google api require billing 
+            // so we will just return latlng as a string instade
+
+
+            return 'lat : ' + latlng.lat().toString() + ' , lng : ' + latlng.lng().toString() ; 
+        } , 
+        
         clickedAway(event){
             this.$emit('clickedAway') ; 
         } , 

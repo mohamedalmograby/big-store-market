@@ -19,7 +19,7 @@
                         <button class="col-md-4 btn btn-primary float-left" @click="login">Login</button>
                         <button class="col-md-4 btn btn-danger float-right" @click="register">Create an account</button>
                     </div>
-                    <Map @clickedAway="closeMap" v-show="mapLocation != null"></Map>
+                    <Map @marker_position_changed="changeAddress" @clickedAway="closeMap" v-show="mapLocation != null"></Map>
                     <div v-if="isLoggedIn">
                         <div class="row">
 
@@ -84,8 +84,10 @@ export default {
         closeMap(){
             if(this.wait)return ; 
             this.mapLocation = null ; 
+        } , 
+        changeAddress(address){
+            this.address = address ; 
         }
-        
         ,
         login() {
             this.$router.push({name: 'login', params: {nextUrl: this.$route.fullPath}})
